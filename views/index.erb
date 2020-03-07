@@ -1,5 +1,11 @@
 <html>
-  <head></head>
+  <head>
+    <style>
+        body {
+            background: <%= bg_color %>
+        }
+    </style>
+  </head>
   <body>
     <p>
         <%= message %>
@@ -11,6 +17,8 @@
       </form>
     </p>
     <p>
-        <%= "The SECRET NUMBER is #{number}" if message == "You got it right!!" %>
+        <%= "You have #{@@guesses} guesses left" %>
+    <p>
+        <%= "The SECRET NUMBER is #{number}" if message == "You got it right!!" || cheat_mode %>
   </body>
 </html>
